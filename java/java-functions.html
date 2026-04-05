@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CodeApex</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0d1117] text-white">
+
+<div class="flex items-center justify-between px-6 py-3 bg-[#0f0f0f] text-white">
+
+  <!-- LEFT -->
+  <div class="flex-1">
+    <button onclick="toggleMenu()" class="mb-3">☰</button>
+
+    <div class="font-mono font-semibold px-4 py-2 rounded-md inline-block cursor-pointer hover:bg-[#8a2be2]" onclick="s()">
+      CodeApex
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-8 text-gray-400">
+    <a href="../learn.html" class="hover:text-white transition">Learn</a>
+    <a href="../comp.html" class="hover:text-white transition">Compiler</a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="flex-1 flex justify-end">
+    <div class="font-mono font-semibold px-4 py-2 rounded-md cursor-pointer hover:bg-[#5a46b8]" onclick="f()">
+      Feedback
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="hidden bg-[#09090b] w-48 h-full fixed top-0 left-0 p-4 z-50">
+  <button onclick="toggleMenu()" class="mb-3">✖ Close</button>
+
+<h2 class="mb-3 font-semibold">Java Topics</h2>
+  <ul class="space-y-2">
+    <li><a href="java-arrays.html">Arrays</a></li>
+    <li><a href="java-loops.html">Loops</a></li>
+    <li><a href="java-functions.html">Functions</a></li>
+    <li><a href="java-strings.html">Strings</a></li>
+    <li><a href="java-sort.html">Sort</a></li>
+    <li><a href="java-search.html">Search</a></li>
+    <li><a href="java-oop.html">OOP</a></li>
+    <li><a href="java-heap.html">Heap</a></li>
+  </ul>
+</div>
+
+  <!-- Main Content -->
+  <div class="p-6 text-xl">
+
+    <div class="flex justify-center"><h1 class="text-6xl font-bold mb-3 items-center"><span class="text-[#8a2be2]">Java </span> Function</h1></div>
+    <p class="text-[#f5f5f5] mb-6">
+    A function in Java (called a method) is a block of code that performs a specific task. It helps divide programs into smaller parts, improving readability and maintainability. Functions allow code reuse and make debugging easier.
+    </p>
+
+    
+    <h2 class="text-2xl font-semibold mb-3">Function Declaration and Initialization</h2>
+    <p class="list-disc ml-5 mb-6">
+    Functions in Java are defined inside classes using a return type, method name, and parameters. There is no separate declaration. The method executes when it is called, and its structure defines how it interacts with other parts of the program.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Types of Functions</h2>
+    <p class="list-disc ml-5 mb-6">
+    Java supports methods with or without parameters and return values. It also supports method overloading, where multiple methods have the same name but different parameters. This provides flexibility and improves code readability.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Parameters and Return Values</h2>
+    <p class="list-disc ml-5 mb-6">
+    Functions can accept parameters to take input and return values using the return keyword. This allows passing data into methods and retrieving processed results, making programs more dynamic and modular.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Advantages of Functions</h2>
+    <p class="list-disc ml-5 mb-6">
+    Functions improve modularity, reusability, and readability. They reduce code duplication and make programs easier to debug and maintain. Functions also support teamwork, allowing developers to work on different parts independently.
+    </p>
+
+    <!-- Code Example -->
+    <h2 class="text-xl font-semibold mb-3">Basic Example</h2>
+    <pre class="bg-black p-4 rounded mb-6 text-[#b247ff]">
+public class Main {
+
+    static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        int result = add(5, 3);
+        System.out.println("Sum = " + result);
+    }
+}
+    </pre>
+
+ 
+
+
+  <!-- JS -->
+   <script  defer src="sr.js"></script>
+
+  <script>
+  function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    sidebar.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+  }
+</script>
+
+</body>
+</html>

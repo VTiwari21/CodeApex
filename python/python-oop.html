@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CodeApex</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0d1117] text-white">
+
+<div class="flex items-center justify-between px-6 py-3 bg-[#0f0f0f] text-white">
+
+  <!-- LEFT -->
+  <div class="flex-1">
+    <button onclick="toggleMenu()" class="mb-3">☰</button>
+
+    <div class="font-mono font-semibold px-4 py-2 rounded-md inline-block cursor-pointer hover:bg-[#8a2be2]" onclick="s()">
+      CodeApex
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-8 text-gray-400">
+    <a href="../learn.html" class="hover:text-white transition">Learn</a>
+    <a href="../comp.html" class="hover:text-white transition">Compiler</a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="flex-1 flex justify-end">
+    <div class="font-mono font-semibold px-4 py-2 rounded-md cursor-pointer hover:bg-[#5a46b8]" onclick="s()">
+      Feedback
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="hidden bg-[#09090b] w-48 h-full fixed top-0 left-0 p-4 z-50">
+  <button onclick="toggleMenu()" class="mb-3">✖ Close</button>
+
+<h2 class="mb-3 font-semibold">Python Topics</h2>
+  <ul class="space-y-2">
+    <li><a href="python-arrays.html">Arrays</a></li>
+    <li><a href="python-loops.html">Loops</a></li>
+    <li><a href="python-functions.html">Functions</a></li>
+    <li><a href="python-strings.html">Strings</a></li>
+    <li><a href="python-sort.html">Sort</a></li>
+    <li><a href="python-search.html">Search</a></li>
+    <li><a href="python-oop.html">OOP</a></li>
+  </ul>
+</div>
+
+  <!-- Main Content -->
+  <div class="p-6 text-xl">
+
+    <div class="flex justify-center"><h1 class="text-6xl font-bold mb-3 items-center"><span class="text-[#8a2be2]">Python </span> OOP</h1></div>
+    <p class="text-[#f5f5f5] mb-6">
+    Object-Oriented Programming (OOP) in Python is a programming approach based on classes and objects. It helps organize code using real-world concepts. OOP improves code readability, reusability, and scalability, making it easier to manage large and complex programs.
+    </p>
+
+    
+    <h2 class="text-2xl font-semibold mb-3">Classes and Objects</h2>
+    <p class="list-disc ml-5 mb-6">
+    A class is a blueprint for creating objects, while an object is an instance of a class. Classes define attributes (variables) and methods (functions). Objects use these attributes and methods to perform tasks, helping in better structuring and modular programming.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Encapsulation</h2>
+    <p class="list-disc ml-5 mb-6">
+    Encapsulation is the process of bundling data and methods inside a class. It restricts direct access to data using access modifiers like public, protected, and private. This improves data security and prevents accidental modification of important information within the program.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Inheritance and Polymorphism</h2>
+    <p class="list-disc ml-5 mb-6">
+    Inheritance allows one class to inherit properties and methods from another class, promoting code reuse. Polymorphism allows methods to behave differently depending on the object. These concepts make programs flexible, extensible, and easier to maintain over time.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Advantages of OOP in Python</h2>
+    <p class="list-disc ml-5 mb-6">
+    OOP in Python improves modularity, reusability, and maintainability of code. It helps in managing complex programs by dividing them into smaller parts. Python’s simple syntax makes implementing OOP concepts easier compared to many other programming languages.
+    </p>
+
+    <!-- Code Example -->
+    <h2 class="text-xl font-semibold mb-3">Basic Example</h2>
+    <pre class="bg-black p-4 rounded mb-6 text-[#b247ff]">
+class Student:
+    def __init__(self, name):
+        self.name = name
+
+    def display(self):
+        print("Name:", self.name)
+
+# creating object
+s1 = Student("god")
+s1.display() </pre>
+
+    </pre>
+
+ 
+
+
+  <!-- JS -->
+   <script  defer src="sr.js"></script>
+  <script>
+  function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    sidebar.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+  }
+
+</script>
+
+</body>
+</html>

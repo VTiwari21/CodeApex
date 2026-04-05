@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeApex</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body{
+            background-color: #0d1117;
+        }
+        .fira-sans-medium {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  color:white;
+  font-size: xx-large;
+}
+.purple{
+    color: #8a2be2;
+}
+/* From Uiverse.io by Navarog21 */ 
+/* Updated Theme Button */
+button {
+  position: relative;
+  width: 7em;              /* smaller */
+  height: 4em;             /* smaller */
+  outline: none;
+  transition: 0.1s;
+  background-color: transparent;
+  border: none;
+  font-size: 12px;         /* slightly smaller text */
+  font-weight: bold;
+  color: #ffffff;
+}
+
+#clip {
+  --color: #6e56cf;        /* YOUR THEME COLOR */
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border: 4px double var(--color);   /* thinner border */
+  box-shadow: inset 0px 0px 10px #4c3bb0;
+  -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.arrow {
+  position: absolute;
+  transition: 0.2s;
+  background-color: #6e56cf;
+  top: 35%;
+  width: 10%;
+  height: 30%;
+}
+
+#leftArrow {
+  left: -13%;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 50%);
+}
+
+#rightArrow {
+  -webkit-clip-path: polygon(100% 49%, 0 0, 0 100%);
+  left: 102%;
+}
+
+/* Hover = lighter purple */
+button:hover #rightArrow,
+button:hover #leftArrow {
+  background-color: #8b74ff;
+}
+
+button:hover #rightArrow {
+  left: -15%;
+  animation: 0.6s ease-in-out both infinite alternate rightArrow8;
+}
+
+button:hover #leftArrow {
+  left: 103%;
+  animation: 0.6s ease-in-out both infinite alternate leftArrow8;
+}
+
+/* Corners */
+.corner {
+  position: absolute;
+  width: 3em;              /* smaller */
+  height: 3em;
+  background-color: #6e56cf;
+  box-shadow: inset 1px 1px 6px #4c3bb0;
+  transform: scale(1) rotate(45deg);
+  transition: 0.2s;
+}
+
+#rightTop {
+  top: -1.5em;
+  left: 90%;
+}
+
+#leftTop {
+  top: -1.5em;
+  left: -2.5em;
+}
+
+#leftBottom {
+  top: 1.8em;
+  left: -2em;
+}
+
+#rightBottom {
+  top: 45%;
+  left: 88%;
+}
+
+/* Hover effects */
+button:hover .corner {
+  transform: scale(1.2) rotate(45deg);
+}
+
+button:hover #clip {
+  animation: 0.2s ease-in-out 0.55s both greenLight8;
+  --color: #8b74ff;
+}
+
+/* Animations */
+@keyframes greenLight8 {
+  to {
+    box-shadow: inset 0px 0px 20px #8b74ff;
+  }
+}
+
+@keyframes leftArrow8 {
+  to {
+    transform: translateX(8px);
+  }
+}
+
+@keyframes rightArrow8 {
+  to {
+    transform: translateX(-8px);
+  }
+}
+.btn{
+    text-align: center;
+}
+/* From Uiverse.io by alexruix */ 
+.card {
+ width: 190px;
+ height: 254px;
+ border-radius: 20px;
+ background: #e5d0ed;
+ position: relative;
+ padding: 1.8rem;
+ border: 2px solid #c3c6ce;
+ transition: 0.5s ease-out;
+ overflow: visible;
+}
+
+.card-details {
+ color: black;
+ height: 100%;
+ gap: .5em;
+ display: grid;
+ place-content: center;
+}
+
+.card-button {
+ transform: translate(-50%, 125%);
+ width: 60%;
+ height:18%;
+ border-radius: 1rem;
+ border: none;
+ background-color: #5a46b8;
+ color: #e5d0ed;
+ font-size: 1rem;
+ padding: .5rem 1rem;
+ position: absolute;
+ left: 50%;
+ bottom: 0;
+ opacity: 0;
+ transition: 0.3s ease-out;
+}
+
+.text-body {
+ color: rgb(134, 134, 134);
+}
+
+/*Text*/
+.text-title {
+ font-size: 1.5em;
+ font-weight: bold;
+}
+
+/*Hover*/
+.card:hover {
+ border-color: #5a46b8;
+ box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card:hover .card-button {
+ transform: translate(-50%, 50%);
+ opacity: 1;
+}
+.b{
+    display: inline-flex;
+}
+    </style>
+
+</head>
+<body>
+ <div class="flex items-center px-6 py-3 bg-[#0f0f0f] text-white">
+  <div class="flex-1">
+    <div class=" font-mono font-semibold px-4 py-2 rounded-md inline-block cursor-pointer hover:bg-[#8a2be2]" onclick="comp()">
+      CodeApex
+    </div>
+  </div>
+
+  <div class="flex gap-8 text-gray-400 justify-center">
+    <a href="learn.html" class="hover:text-white transition">Learn</a>
+    <a href="comp.html" class="hover:text-white transition">Compiler</a>
+  
+  </div>
+
+  <div class="flex-1 flex justify-end items-center gap-4" >
+    <div class=" font-mono font-semibold px-4 py-2 rounded-md inline-block cursor-pointer hover:bg-[#5a46b8]" onclick="f()">feedback</div>
+  </div>
+
+</div>
+<hr style="background-color:gray;">
+<br>
+<br>
+
+<div class="flex flex-col items-center justify-center   gap-2">
+    <h1 id="heading"  class="fira-sans-medium text-6xl">Code<span class="purple">Apex</span></h1>
+    <h2 id="heading"  class ="fira-sans-medium text-5xl">Learn to Code</h2>
+    <p class="text-white text-3xl">Write to code, Master it, with built-in complier</p>
+    <!-- <div class=" border-2 border-[#400677] border-double cursor-pointer px-4 py-2 text-white hover:bg-[#5a46b8]">try it</div> -->
+</div>
+<br>
+    <!-- From Uiverse.io by Navarog21 --> 
+<div class="btn">
+<button style="color:#8a2be2;" onclick="tab()">
+   C O D E 
+    <div id="clip">
+        <div id="leftTop" class="corner"></div>
+        <div id="rightBottom" class="corner"></div>
+        <div id="rightTop" class="corner"></div>
+        <div id="leftBottom" class="corner"></div>
+    </div>
+    <span id="rightArrow" class="arrow"></span>
+    <span id="leftArrow" class="arrow"></span>
+</button>
+</div >
+
+<div class="flex py-7 ">
+<marquee  scrollamount="20" behavior="" direction=""  class=" text-white  flex font-extrabold bg-gray-400/30"><pre>//OOP concept            //Pointer in C          //Array             //Strings               //Loops</pre> </marquee>
+</div>
+<div class="flex flex-wrap justify-center gap-6 py-6 md:flex-nowrap">
+    <div id="c">
+        <div class="card">
+            <div class="card-details">
+                <p class="text-title text-[#8a2be2]">C</p>
+            </div>
+            <button class="card-button" onclick="tabC()">More info</button>
+        </div>
+    </div>
+    <div id="c++">
+    <div class="card">
+  <div class="card-details">
+    <p class="text-title text-[#8a2be2]">C++</p>
+  </div>
+  <button class="card-button" onclick="tabCP()">More info</button>
+</div>
+</div>
+<div id="java">
+    <div class="card">
+  <div class="card-details">
+    <p class="text-title text-[#8a2be2]">Java</p>
+  </div>
+  <button class="card-button" onclick="tabJ()">More info</button>
+</div>
+</div>
+<div id="python">
+    <div class="card">
+  <div class="card-details">
+    <p class="text-title text-[#8a2be2]">Python</p>
+  </div>
+  <button class="card-button" onclick="tabP()">More info</button>
+</div>
+</div>
+<div id="c#"><div class="card">
+  <div class="card-details">
+    <p class="text-title text-[#8a2be2]">C#</p>
+  </div>
+  <button class="card-button" onclick="tabCS()">More info</button>
+</div></div>
+</div>
+<footer class="bg-[#051732] text-[#F5F5F5] flex justify-center py-2">Made by Vaibhav & Madhav</footer>
+</body>
+
+<script src="sr.js"></script>
+</html>

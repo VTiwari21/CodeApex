@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> CodeApex</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0d1117] text-white">
+
+<div class="flex items-center justify-between px-6 py-3 bg-[#0f0f0f] text-white">
+
+  <!-- LEFT -->
+  <div class="flex-1">
+    <button onclick="toggleMenu()" class="mb-3">☰</button>
+
+    <div class="font-mono font-semibold px-4 py-2 rounded-md inline-block cursor-pointer hover:bg-[#8a2be2]" onclick="s()">
+      CodeApex
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-8 text-gray-400">
+    <a href="../learn.html" class="hover:text-white transition">Learn</a>
+    <a href="../comp.html" class="hover:text-white transition">Compiler</a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="flex-1 flex justify-end">
+    <div class="font-mono font-semibold px-4 py-2 rounded-md cursor-pointer hover:bg-[#5a46b8]" onclick="f()">
+      Feedback
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="hidden bg-[#09090b] w-48 h-full fixed top-0 left-0 p-4 z-50">
+  <button onclick="toggleMenu()" class="mb-3">✖ Close</button>
+
+  <h2 class="mb-3 font-semibold">C++ Topics</h2>
+    <ul class="space-y-2">
+    <li><a href="cpp-arrays.html">Arrays</a></li>
+    <li><a href="cpp-loops.html">Loops</a></li>
+    <li><a href="cpp-functions.html">Functions</a></li>
+    <li><a href="cpp-pointers.html">Pointers</a></li>
+    <li><a href="cpp-strings.html">Strings</a></li>
+    <li><a href="cpp-sort.html">Sort</a></li>
+    <li><a href="cpp-search.html">Search</a></li>
+    <li><a href="cpp-oop.html">OOP</a></li>
+    <li><a href="cpp-heap.html">Heap</a></li>
+  </ul>
+</div>
+
+  <!-- Main Content -->
+  <div class="p-6 text-xl">
+
+    <div class="flex justify-center"><h1 class="text-6xl font-bold mb-3 items-center"><span class="text-[#8a2be2]">C++ </span> OOP</h1></div>
+    <p class="text-[#f5f5f5] mb-6">
+    Object-Oriented Programming (OOP) in C++ is a programming paradigm based on objects and classes. It allows you to structure programs using real-world concepts. OOP helps in organizing code efficiently, improving readability, and making programs easier to maintain and extend.
+    </p>
+
+    
+    <h2 class="text-2xl font-semibold mb-3">Classes and Objects</h2>
+    <p class="list-disc ml-5 mb-6">
+    A class is a blueprint for creating objects, while an object is an instance of a class. Classes define properties (variables) and behaviors (functions). Objects use these properties and behaviors to perform tasks, enabling better organization and modular design in programs.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Accessing and Modifying Elements</h2>
+    <p class="list-disc ml-5 mb-6">
+    Encapsulation is the concept of bundling data and methods together within a class. It restricts direct access to some components using access modifiers like private, protected, and public. This improves data security and prevents unintended interference from other parts of the program.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Inheritance and Polymorphism</h2>
+    <p class="list-disc ml-5 mb-6">
+    Inheritance allows one class to acquire properties and behaviors of another class, promoting code reuse. Polymorphism enables functions or operators to behave differently based on context. These concepts make programs flexible, scalable, and easier to extend with new features.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Advantages of OOP</h2>
+    <p class="list-disc ml-5 mb-6">
+    OOP improves code reusability, scalability, and maintainability. It helps in managing large and complex programs by dividing them into smaller objects. OOP also enhances data security and supports real-world modeling, making it widely used in software development.
+    </p>
+
+    <!-- Code Example -->
+    <h2 class="text-xl font-semibold mb-3">Basic Example</h2>
+    <pre class="bg-black p-4 rounded mb-6 text-[#b247ff]">
+#include &lt;iostream&gt; 
+using namespace std;
+
+class Student {
+public:
+    string name;
+
+    void display() {
+        cout << "Name: " << name;
+    }
+};
+
+int main() {
+    Student s1;
+    s1.name = "Vaibhav";
+    s1.display();
+    return 0;
+}
+    </pre>
+
+ 
+
+
+  <!-- JS -->
+   <script  defer src="sr.js"></script>
+  <script>
+  function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    sidebar.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CodeApex</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0d1117] text-white">
+
+<div class="flex items-center justify-between px-6 py-3 bg-[#0f0f0f] text-white">
+
+  <!-- LEFT -->
+  <div class="flex-1">
+    <button onclick="toggleMenu()" class="mb-3">☰</button>
+
+    <div class="font-mono font-semibold px-4 py-2 rounded-md inline-block cursor-pointer hover:bg-[#8a2be2]" onclick="s()">
+      CodeApex
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-8 text-gray-400">
+    <a href="../learn.html" class="hover:text-white transition">Learn</a>
+    <a href="../comp.html" class="hover:text-white transition">Compiler</a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="flex-1 flex justify-end">
+    <div class="font-mono font-semibold px-4 py-2 rounded-md cursor-pointer hover:bg-[#5a46b8]" onclick="f()">
+      Feedback
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="hidden bg-[#09090b] w-48 h-full fixed top-0 left-0 p-4 z-50">
+  <button onclick="toggleMenu()" class="mb-3">✖ Close</button>
+
+<h2 class="mb-3 font-semibold">Java Topics</h2>
+  <ul class="space-y-2">
+    <li><a href="java-arrays.html">Arrays</a></li>
+    <li><a href="java-loops.html">Loops</a></li>
+    <li><a href="java-functions.html">Functions</a></li>
+    <li><a href="java-strings.html">Strings</a></li>
+    <li><a href="java-sort.html">Sort</a></li>
+    <li><a href="java-search.html">Search</a></li>
+    <li><a href="java-oop.html">OOP</a></li>
+    <li><a href="java-heap.html">Heap</a></li>
+  </ul>
+</div>
+
+  <!-- Main Content -->
+  <div class="p-6 text-xl">
+
+    <div class="flex justify-center"><h1 class="text-6xl font-bold mb-3 items-center"><span class="text-[#8a2be2]">Java </span> String</h1></div>
+    <p class="text-[#f5f5f5] mb-6">
+    A string in Java is a sequence of characters used to store text. It is an object of the String class. Strings are immutable, meaning their values cannot be changed after creation, ensuring safety and consistency.
+</p>
+
+    
+    <h2 class="text-2xl font-semibold mb-3">Declaration and Initialization</h2>
+    <p class="list-disc ml-5 mb-6">
+    Strings are declared using the String class and initialized with double quotes. Java automatically handles memory allocation. Strings can also be created using the new keyword, but direct assignment is more commonly used.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Input and Output of Strings</h2>
+    <p class="list-disc ml-5 mb-6">
+    Strings are printed using System.out.println(). For input, Java uses the Scanner class. This allows easy handling of text input and output in programs, making user interaction simple
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">String Methods and Operations</h2>
+    <p class="list-disc ml-5 mb-6">
+    Java provides methods like length(), toUpperCase(), toLowerCase(), substring(), and equals(). These help in manipulating and comparing strings efficiently without manual handling.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Advantages of Java Strings</h2>
+    <p class="list-disc ml-5 mb-6">
+    Java strings are easy to use, secure, and come with many built-in methods. Their immutability ensures data safety. They are widely used in applications for text processing, file handling, and user interaction.
+    </p>
+
+    <!-- Code Example -->
+    <h2 class="text-xl font-semibold mb-3">Basic Example</h2>
+    <pre class="bg-black p-4 rounded mb-6 text-[#b247ff]">
+public class Main {
+    public static void main(String[] args) {
+        String str = "Hello World";
+
+        System.out.println("String: " + str);
+        System.out.println("Length: " + str.length());
+        System.out.println("Uppercase: " + str.toUpperCase());
+    }
+}
+    </pre>
+
+ 
+
+
+  <!-- JS -->
+   <script  defer src="sr.js"></script>
+  <script>
+  function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    sidebar.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+  }
+</script>
+
+</body>
+</html>

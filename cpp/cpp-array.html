@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> CodeApex</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0d1117] text-white">
+
+<div class="flex items-center justify-between px-6 py-3 bg-[#0f0f0f] text-white">
+
+  <!-- LEFT -->
+  <div class="flex-1">
+    <button onclick="toggleMenu()" class="mb-3">☰</button>
+
+    <div class="font-mono font-semibold px-4 py-2 rounded-md inline-block cursor-pointer hover:bg-[#8a2be2]" onclick="s()">
+      CodeApex
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-8 text-gray-400">
+    <a href="..\learn.html" class="hover:text-white transition">Learn</a>
+    <a href="..\comp.html" class="hover:text-white transition">Compiler</a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="flex-1 flex justify-end">
+    <div class="font-mono font-semibold px-4 py-2 rounded-md cursor-pointer hover:bg-[#5a46b8]" onclick="f()">
+      Feedback
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="hidden bg-[#09090b] w-48 h-full fixed top-0 left-0 p-4 z-50">
+  <button onclick="toggleMenu()" class="mb-3">✖ Close</button>
+
+  <h2 class="mb-3 font-semibold">C++  Topics</h2>
+  <ul class="space-y-2">
+    <li><a href="cpp-arrays.html">Arrays</a></li>
+    <li><a href="cpp-loops.html">Loops</a></li>
+    <li><a href="cpp-functions.html">Functions</a></li>
+    <li><a href="cpp-pointers.html">Pointers</a></li>
+    <li><a href="cpp-strings.html">Strings</a></li>
+    <li><a href="cpp-sort.html">Sort</a></li>
+    <li><a href="cpp-search.html">Search</a></li>
+    <li><a href="cpp-oop.html">OOP</a></li>
+    <li><a href="cpp-heap.html">Heap</a></li>
+  </ul>
+</div>
+
+  <!-- Main Content -->
+ <div class="p-6 text-xl">
+
+    <div class="flex justify-center"><h1 class="text-6xl font-bold mb-3 items-center"><span class="text-[#8a2be2]">C++ </span> Array</h1></div>
+    <p class="text-[#f5f5f5] mb-6">
+    An array in C++ is a collection of elements of the same type stored in contiguous memory locations. It allows efficient storage and access of multiple values using a single variable name.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-3">Declaration and Initialization</h2>
+    <p class="list-disc ml-5 mb-6">
+    Arrays are declared by specifying the data type, name, and size. They can be initialized during declaration or later. comping starts from 0, and uninitialized arrays may contain garbage values.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-3">Accessing and Modifying Elements</h2>
+    <p class="list-disc ml-5 mb-6">
+    Elements are accessed using comp numbers. You can modify values directly or use loops for traversal. Since arrays use continuous memory, operations are fast and efficient.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-3">Types of Arrays</h2>
+    <p class="list-disc ml-5 mb-6">
+    C++ supports one-dimensional, two-dimensional, and multi-dimensional arrays. They are widely used in competitive programming, matrix operations, and data storage tasks.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-3">Advantages and Limitations</h2>
+    <p class="list-disc ml-5 mb-6">
+    Arrays offer fast access and simple structure. However, they have fixed size and no built-in bounds checking, which can lead to runtime errors if misused.
+    </p>
+
+    <h2 class="text-xl font-semibold mb-3">Basic Example</h2>
+    <pre class="bg-black p-4 rounded mb-6 text-[#b247ff]">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int arr[5] = {10, 20, 30, 40, 50};
+
+    for(int i = 0; i < 5; i++) {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
+}
+    </pre>
+</div>
+    </pre>
+
+ 
+
+
+  <!-- JS -->
+   <script  defer src="sr.js"></script>
+
+  <script>
+  function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    sidebar.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+  }
+
+  // Click outside to close
+  document.getElementById("overlay").addEventListener("click", () => {
+    document.getElementById("sidebar").classList.add("hidden");
+    document.getElementById("overlay").classList.add("hidden");
+  });
+
+  // Press ESC to close
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      document.getElementById("sidebar").classList.add("hidden");
+      document.getElementById("overlay").classList.add("hidden");
+    }
+  });
+</script>
+
+</body>
+</html>

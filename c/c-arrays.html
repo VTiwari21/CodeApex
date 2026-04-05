@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> CodeApex</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0d1117] text-white">
+
+<div class="flex items-center justify-between px-6 py-3 bg-[#0f0f0f] text-white">
+
+  <!-- LEFT -->
+  <div class="flex-1">
+    <button onclick="toggleMenu()" class="mb-3">☰</button>
+
+    <div class="font-mono font-semibold px-4 py-2 rounded-md inline-block cursor-pointer hover:bg-[#8a2be2]" onclick="s()">
+      CodeApex
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-8 text-gray-400">
+    <a href="../learn.html" class="hover:text-white transition">Learn</a>
+    <a href="../comp.html" class="hover:text-white transition">Compiler</a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="flex-1 flex justify-end">
+    <div class="font-mono font-semibold px-4 py-2 rounded-md cursor-pointer hover:bg-[#5a46b8]" onclick="f()">
+      Feedback
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="hidden bg-[#09090b] w-48 h-full fixed top-0 left-0 p-4 z-50">
+  <button onclick="toggleMenu()" class="mb-3">✖ Close</button>
+
+  <h2 class="mb-3 font-semibold">C Topics</h2>
+  <ul class="space-y-2">
+    <li><a href="c-arrays.html">Arrays</a></li>
+    <li><a href="c-loops.html">Loops</a></li>
+    <li><a href="c-functions.html">Functions</a></li>
+    <li><a href="c-pointers.html">Pointers</a></li>
+    <li><a href="c-strings.html">Strings</a></li>
+     <li><a href="c-sort.html">Sort</a></li>
+    <li><a href="c-search.html">Search</a></li>
+  </ul>
+</div>
+
+  <!-- Main Content -->
+  <div class="p-6 text-xl">
+
+    <div class="flex justify-center"><h1 class="text-6xl font-bold mb-3 items-center"><span class="text-[#8a2be2]">C </span> Array</h1></div>
+    <p class="text-[#f5f5f5] mb-6">
+    An array in C is a collection of elements of the same data type stored in contiguous memory locations. It allows you to store multiple values under a single variable name. Arrays are useful for handling large datasets efficiently and accessing elements using comp numbers.
+    </p>
+
+    
+    <h2 class="text-2xl font-semibold mb-3">Declaration and Initialization</h2>
+    <p class="list-disc ml-5 mb-6">
+    Arrays are declared by specifying the data type, name, and size. You can initialize them at the time of declaration or later. comping starts from 0, so the first element is accessed at comp 0. Proper initialization helps avoid garbage values in the array elements.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Accessing and Modifying Elements</h2>
+    <p class="list-disc ml-5 mb-6">
+    Each element in an array is accessed using its comp. You can read, update, or manipulate values using loops or direct comping. Since arrays use continuous memory, accessing elements is fast and efficient, making them useful for computations and iterative operations.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Types of Arrays</h2>
+    <p class="list-disc ml-5 mb-6">
+    C supports one-dimensional, two-dimensional, and multi-dimensional arrays. A one-dimensional array is like a list, while a two-dimensional array represents a table or matrix. Multi-dimensional arrays are useful in applications like graphics, data tables, and mathematical computations.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Advantages and Limitations</h2>
+    <p class="list-disc ml-5 mb-6">
+    Arrays provide fast access and efficient storage of similar data types. However, their size must be fixed at declaration, and they cannot store different data types together. Also, no built-in bounds checking exists, so accessing invalid indices can cause unexpected behavior.
+    </p>
+
+    <!-- Code Example -->
+    <h2 class="text-xl font-semibold mb-3">Basic Example</h2>
+    <pre class="bg-black p-4 rounded mb-6 text-[#b247ff]">
+#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5] = {10, 20, 30, 40, 50};
+
+    for(int i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+    </pre>
+
+ 
+
+
+  <!-- JS -->
+   
+<script  defer src="sr.js"></script>
+  <script>
+  function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    sidebar.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+  }
+
+</script>
+
+</body>
+</html>

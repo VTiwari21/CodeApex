@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>odeApex</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0d1117] text-white">
+
+<div class="flex items-center justify-between px-6 py-3 bg-[#0f0f0f] text-white">
+
+  <!-- LEFT -->
+  <div class="flex-1">
+    <button onclick="toggleMenu()" class="mb-3">☰</button>
+
+    <div class="font-mono font-semibold px-4 py-2 rounded-md inline-block cursor-pointer hover:bg-[#8a2be2]" onclick="s()">
+      CodeApex
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-8 text-gray-400">
+    <a href="#" class="hover:text-white transition">Learn</a>
+    <a href="#" class="hover:text-white transition">Compiler</a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="flex-1 flex justify-end">
+    <div class="font-mono font-semibold px-4 py-2 rounded-md cursor-pointer hover:bg-[#5a46b8]" onclick="f()">
+      Feedback
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="hidden bg-[#09090b] w-48 h-full fixed top-0 left-0 p-4 z-50">
+  <button onclick="toggleMenu()" class="mb-3">✖ Close</button>
+<h2 class="mb-3 font-semibold">Python Topics</h2>
+  <ul class="space-y-2">
+    <li><a href="python-arrays.html">Arrays</a></li>
+    <li><a href="python-loops.html">Loops</a></li>
+    <li><a href="python-functions.html">Functions</a></li>
+    <li><a href="python-strings.html">Strings</a></li>
+    <li><a href="python-sort.html">Sort</a></li>
+    <li><a href="python-search.html">Search</a></li>
+    <li><a href="python-oop.html">OOP</a></li>
+  </ul>
+</div>
+
+  <!-- Main Content -->
+  <div class="p-6 text-xl">
+
+    <div class="flex justify-center"><h1 class="text-6xl font-bold mb-3 items-center"><span class="text-[#8a2be2]">Java </span> Function</h1></div>
+    <p class="text-[#f5f5f5] mb-6">
+    A function in Python is a reusable block of code that performs a specific task. It helps break programs into smaller parts, making them easier to understand and manage. Functions improve code reusability and reduce repetition, making programs more efficient and organized.
+    </p>
+
+    
+    <h2 class="text-2xl font-semibold mb-3">Function Declaration and Initialization</h2>
+    <p class="list-disc ml-5 mb-6">
+    Functions in Python are defined using the def keyword followed by the function name and parameters. Unlike some languages, no separate declaration is needed. The function body is defined using indentation, and it executes when the function is called.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Types of Functions</h2>
+    <p class="list-disc ml-5 mb-6">
+    Python supports different types of functions such as built-in functions, user-defined functions, and lambda (anonymous) functions. Functions can also have parameters and return values or work without them, providing flexibility for different programming needs.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Parameters and Return Values</h2>
+    <p class="list-disc ml-5 mb-6">
+    Functions can take input parameters and return results using the return statement. Python allows default parameters and keyword arguments, making function calls more flexible. Return values help pass processed data back to the caller for further use.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Advantages of Functions</h2>
+    <p class="list-disc ml-5 mb-6">
+    Functions make code modular, reusable, and easier to debug. They help in organizing large programs into smaller sections. Functions also improve readability and allow multiple developers to work on different parts of a program efficiently.
+    </p>
+
+    <!-- Code Example -->
+    <h2 class="text-xl font-semibold mb-3">Basic Example</h2>
+    <pre class="bg-black p-4 rounded mb-6 text-[#b247ff]">
+# function definition
+def add(a, b):
+    return a + b
+
+# function call
+result = add(5, 3)
+print("Sum =", result)
+    </pre>
+
+ 
+
+
+  <!-- JS -->
+   <script  defer src="sr.js"></script>
+
+  <script>
+  function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    sidebar.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+  }
+</script>
+
+</body>
+</html>

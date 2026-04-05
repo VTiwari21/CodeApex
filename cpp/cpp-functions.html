@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> CodeApex</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0d1117] text-white">
+
+<div class="flex items-center justify-between px-6 py-3 bg-[#0f0f0f] text-white">
+
+  <!-- LEFT -->
+  <div class="flex-1">
+    <button onclick="toggleMenu()" class="mb-3">☰</button>
+
+    <div class="font-mono font-semibold px-4 py-2 rounded-md inline-block cursor-pointer hover:bg-[#8a2be2]" onclick="s()">
+      CodeApex
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-8 text-gray-400">
+    <a href="../learn.html" class="hover:text-white transition">Learn</a>
+    <a href="../comp.html" class="hover:text-white transition">Compiler</a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="flex-1 flex justify-end">
+    <div class="font-mono font-semibold px-4 py-2 rounded-md cursor-pointer hover:bg-[#5a46b8]" onclick="f()">
+      Feedback
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="hidden bg-[#09090b] w-48 h-full fixed top-0 left-0 p-4 z-50">
+  <button onclick="toggleMenu()" class="mb-3">✖ Close</button>
+
+  <h2 class="mb-3 font-semibold">C++ Topics</h2>
+    <ul class="space-y-2">
+    <li><a href="cpp-arrays.html">Arrays</a></li>
+    <li><a href="cpp-loops.html">Loops</a></li>
+    <li><a href="cpp-functions.html">Functions</a></li>
+    <li><a href="cpp-pointers.html">Pointers</a></li>
+    <li><a href="cpp-strings.html">Strings</a></li>
+    <li><a href="cpp-sort.html">Sort</a></li>
+    <li><a href="cpp-search.html">Search</a></li>
+    <li><a href="cpp-oop.html">OOP</a></li>
+    <li><a href="cpp-heap.html">Heap</a></li>
+  </ul>
+</div>
+
+  <!-- Main Content -->
+  <div class="p-6 text-xl">
+
+    <div class="flex justify-center"><h1 class="text-6xl font-bold mb-3 items-center"><span class="text-[#8a2be2]">C++ </span> Functions</h1></div>
+    <p class="text-[#f5f5f5] mb-6">
+    A function in C++ is a reusable block of code that performs a specific task. It helps divide a program into smaller parts, making it easier to read and manage. Functions improve code reusability and make debugging simpler by isolating logic into separate sections.    
+    </p>
+
+    
+    <h2 class="text-2xl font-semibold mb-3">Declaration and Initialization</h2>
+    <p class="list-disc ml-5 mb-6">
+    Functions are declared using a prototype before they are used and defined later with actual code. The declaration specifies the return type, function name, and parameters. The definition contains the body of the function, which executes when the function is called.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Types of Functions</h2>
+    <p class="list-disc ml-5 mb-6">
+    C++ supports different types of functions such as functions with parameters and return values, functions without parameters, and functions without return values. It also supports advanced types like inline functions, recursive functions, and function overloading for flexibility.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Parameters and Return Values</h2>
+    <p class="list-disc ml-5 mb-6">
+    Functions can accept inputs through parameters and return results using the return statement. C++ also allows passing arguments by value or by reference, enabling efficient data handling. Return values help send processed data back to the calling function.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Advantages of Functions</h2>
+    <p class="list-disc ml-5 mb-6">
+    Functions make programs modular, reusable, and easier to maintain. They reduce code duplication and improve readability. Functions also allow team collaboration, as different parts of a program can be developed independently, making large projects more manageable.
+    </p>
+
+    <!-- Code Example -->
+    <h2 class="text-xl font-semibold mb-3">Basic Example</h2>
+    <pre class="bg-black p-4 rounded mb-6 text-[#b247ff]">
+#include &lt;iostream&gt;
+
+using namespace std;
+
+// function declaration
+int add(int a, int b);
+
+int main() {
+    int result = add(4, 6);
+    cout << "Sum = " << result;
+    return 0;
+}
+
+// function definition
+int add(int a, int b) {
+    return a + b;
+}
+    </pre>
+
+ 
+
+
+  <!-- JS -->
+   <script  defer src="sr.js"></script>
+
+  <script>
+  function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    sidebar.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+  }
+
+</script>
+
+</body>
+</html>

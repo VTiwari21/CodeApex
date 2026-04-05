@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CodeApex</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0d1117] text-white">
+
+<div class="flex items-center justify-between px-6 py-3 bg-[#0f0f0f] text-white">
+
+  <!-- LEFT -->
+  <div class="flex-1">
+    <button onclick="toggleMenu()" class="mb-3">☰</button>
+
+    <div class="font-mono font-semibold px-4 py-2 rounded-md inline-block cursor-pointer hover:bg-[#8a2be2]" onclick="s()">
+      CodeApex
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-8 text-gray-400">
+    <a href="../learn.html" class="hover:text-white transition">Learn</a>
+    <a href="../comp.html" class="hover:text-white transition">Compiler</a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="flex-1 flex justify-end">
+    <div class="font-mono font-semibold px-4 py-2 rounded-md cursor-pointer hover:bg-[#5a46b8]" onclick="f()">
+      Feedback
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="hidden bg-[#09090b] w-48 h-full fixed top-0 left-0 p-4 z-50">
+  <button onclick="toggleMenu()" class="mb-3">✖ Close</button>
+
+  <h2 class="mb-3 font-semibold">Java Topics</h2>
+  <ul class="space-y-2">
+    <li><a href="java-arrays.html">Arrays</a></li>
+    <li><a href="java-loops.html">Loops</a></li>
+    <li><a href="java-functions.html">Functions</a></li>
+    <li><a href="java-strings.html">Strings</a></li>
+    <li><a href="java-sort.html">Sort</a></li>
+    <li><a href="java-search.html">Search</a></li>
+    <li><a href="java-oop.html">OOP</a></li>
+    <li><a href="java-heap.html">Heap</a></li>
+  </ul>
+</div>
+
+  <!-- Main Content -->
+  <div class="p-6 text-xl">
+
+    <div class="flex justify-center"><h1 class="text-6xl font-bold mb-3 items-center"><span class="text-[#8a2be2]">Java </span> OOP</h1></div>
+    <p class="text-[#f5f5f5] mb-6">
+    Object-Oriented Programming (OOP) in Java is based on classes and objects. It helps organize programs using real-world concepts. OOP improves code structure, reusability, and scalability, making it suitable for large applications.
+    </p>
+
+    
+    <h2 class="text-2xl font-semibold mb-3">Classes and Objects</h2>
+    <p class="list-disc ml-5 mb-6">
+    A class is a blueprint that defines properties and methods, while an object is an instance of a class. Objects use class definitions to perform tasks, enabling modular and organized programming.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Encapsulation</h2>
+    <p class="list-disc ml-5 mb-6">
+    Encapsulation is the process of wrapping data and methods into a single unit. It restricts access using access modifiers like private and public. This ensures data security and prevents unintended modification.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Inheritance and Polymorphism</h2>
+    <p class="list-disc ml-5 mb-6">
+    Inheritance allows one class to inherit features from another, promoting reuse. Polymorphism allows methods to behave differently based on context. These concepts make programs flexible and extensible.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Advantages of OOP in Java</h2>
+    <p class="list-disc ml-5 mb-6">
+    OOP improves modularity, maintainability, and scalability. It helps manage complex systems by dividing them into smaller parts. It also enhances code reuse and security, making it widely used in enterprise applications.
+    </p>
+
+    <!-- Code Example -->
+    <h2 class="text-xl font-semibold mb-3">Basic Example</h2>
+    <pre class="bg-black p-4 rounded mb-6 text-[#b247ff]">
+class Student {
+    String name;
+
+    void display() {
+        System.out.println("Name: " + name);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.name = "Vaibhav";
+        s1.display();
+    }
+}
+    </pre>
+
+ 
+
+
+  <!-- JS -->
+   <script  defer src="sr.js"></script>
+
+  <script>
+  function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    sidebar.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+  }
+</script>
+
+</body>
+</html>

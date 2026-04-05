@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> CodeApex</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0d1117] text-white">
+
+<div class="flex items-center justify-between px-6 py-3 bg-[#0f0f0f] text-white">
+
+  <!-- LEFT -->
+  <div class="flex-1">
+    <button onclick="toggleMenu()" class="mb-3">☰</button>
+
+    <div class="font-mono font-semibold px-4 py-2 rounded-md inline-block cursor-pointer hover:bg-[#8a2be2]" onclick="s()">
+      CodeApex
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-8 text-gray-400">
+    <a href="../learn.html" class="hover:text-white transition">Learn</a>
+    <a href="../comp.html" class="hover:text-white transition">Compiler</a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="flex-1 flex justify-end">
+    <div class="font-mono font-semibold px-4 py-2 rounded-md cursor-pointer hover:bg-[#5a46b8]" onclick="f()">
+      Feedback
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="hidden bg-[#09090b] w-48 h-full fixed top-0 left-0 p-4 z-50">
+  <button onclick="toggleMenu()" class="mb-3">✖ Close</button>
+
+  <h2 class="mb-3 font-semibold">C Topics</h2>
+  <ul class="space-y-2">
+    <li><a href="c-arrays.html">Arrays</a></li>
+    <li><a href="c-loops.html">Loops</a></li>
+    <li><a href="c-functions.html">Functions</a></li>
+    <li><a href="c-pointers.html">Pointers</a></li>
+    <li><a href="c-strings.html">Strings</a></li>
+     <li><a href="c-sort.html">Sort</a></li>
+    <li><a href="c-search.html">Search</a></li>
+  </ul>
+</div>
+
+  <!-- Main Content -->
+  <div class="p-6 text-xl">
+
+    <div class="flex justify-center"><h1 class="text-6xl font-bold mb-3 items-center"><span class="text-[#8a2be2]">C </span>Function </h1></div>
+    <p class="text-[#f5f5f5] mb-6">
+    A function in C is a block of code designed to perform a specific task. It helps in breaking a program into smaller, manageable parts. Functions improve code readability, reusability, and debugging by allowing the same logic to be used multiple times
+</p>
+
+    
+    <h2 class="text-2xl font-semibold mb-3">Function Declaration and Definition</h2>
+    <p class="list-disc ml-5 mb-6">
+    A function is first declared (prototype) and then defined. The declaration tells the compiler about the function’s name, return type, and parameters. The definition contains the actual code to execute. Proper declaration ensures that the function can be used before its actual implementation.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Types of Functions</h2>
+    <p class="list-disc ml-5 mb-6">
+    Functions in C can be categorized based on parameters and return values: with arguments and return value, with arguments and no return value, without arguments but with return value, and without both. This flexibility allows functions to be used in different programming scenarios.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Function Parameters and Return Values</h2>
+    <p class="list-disc ml-5 mb-6">
+    Functions can accept inputs called parameters and may return a value using the return statement. Parameters allow passing data into functions, while return values send results back to the caller. This makes functions useful for calculations and modular programming.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Advantages of Functions</h2>
+    <p class="list-disc ml-5 mb-6">
+    Functions reduce code duplication and make programs easier to understand and maintain. They support modular programming, allowing different parts of a program to be developed and tested independently. Functions also improve debugging, as errors can be isolated within specific parts of the code.
+    </p>
+
+    <!-- Code Example -->
+    <h2 class="text-xl font-semibold mb-3">Basic Example</h2>
+    <pre class="bg-black p-4 rounded mb-6 text-[#b247ff]">
+#include &lt;stdio.h&gt;
+
+int add(int a, int b);
+
+int main() {
+    int result = add(5, 3);
+    printf("Sum = %d", result);
+    return 0;
+}
+
+// function definition
+int add(int a, int b) {
+    return a + b;
+}
+    </pre>
+
+ 
+
+
+  <!-- JS -->
+   <script  defer src="sr.js"></script>
+  <script>
+  function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    sidebar.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+  }
+
+</script>
+
+</body>
+</html>

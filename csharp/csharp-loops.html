@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CodeApex</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0d1117] text-white">
+
+<div class="flex items-center justify-between px-6 py-3 bg-[#0f0f0f] text-white">
+
+  <!-- LEFT -->
+  <div class="flex-1">
+    <button onclick="toggleMenu()" class="mb-3">☰</button>
+
+    <div class="font-mono font-semibold px-4 py-2 rounded-md inline-block cursor-pointer hover:bg-[#8a2be2]" onclick="s()">
+      CodeApex
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-8 text-gray-400">
+    <a href="../learn.html" class="hover:text-white transition">Learn</a>
+    <a href="../comp.html" class="hover:text-white transition">Compiler</a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="flex-1 flex justify-end">
+    <div class="font-mono font-semibold px-4 py-2 rounded-md cursor-pointer hover:bg-[#5a46b8]" onclick="f()">
+      Feedback
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="hidden bg-[#09090b] w-48 h-full fixed top-0 left-0 p-4 z-50">
+  <button onclick="toggleMenu()" class="mb-3">✖ Close</button>
+
+  <h2 class="mb-3 font-semibold">C# Topics</h2>
+  <ul class="space-y-2">
+    <li><a href="csharp-arrays.html">Arrays</a></li>
+    <li><a href="csharp-loops.html">Loops</a></li>
+    <li><a href="csharp-functions.html">Functions</a></li>
+    <li><a href="csharp-strings.html">Strings</a></li>
+    <li><a href="csharp-sort.html">Sort</a></li>
+    <li><a href="csharp-search.html">Search</a></li>
+    <li><a href="csharp-oop.html">OOP</a></li>
+  </ul>
+</div>
+
+  <!-- Main Content -->
+  <div class="p-6 text-xl">
+
+    <div class="flex justify-center"><h1 class="text-6xl font-bold mb-3 items-center"><span class="text-[#8a2be2]">C# </span> Loops</h1></div>
+    <p class="text-[#f5f5f5] mb-6">
+    Loops in C# are used to execute a block of code repeatedly based on a condition. They help reduce redundancy and improve efficiency. Loops are commonly used for iterating through collections, performing calculations, and automating repetitive tasks in programs.
+    </p>
+
+    
+    <h2 class="text-2xl font-semibold mb-3">for Loop</h2>
+    <p class="list-disc ml-5 mb-6">
+    The for loop is used when the number of iterations is known beforehand. It includes initialization, condition, and update in a single statement. This makes it compact and ideal for counter-based operations like iterating through arrays or performing fixed repetitions.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">while Loop</h2>
+    <p class="list-disc ml-5 mb-6">
+    The while loop executes as long as the condition remains true. It is useful when the number of iterations is not known in advance. The condition is checked before execution, so the loop may not run at all if the condition is false initially.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">do-while Loop</h2>
+    <p class="list-disc ml-5 mb-6">
+    The do-while loop ensures that the loop body executes at least once. The condition is checked after execution. This makes it useful for scenarios like menu-driven programs where the code should run before checking the condition.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Control Statement</h2>
+    <p class="list-disc ml-5 mb-6">
+    C# provides control statements like break and continue to manage loop flow. The break statement exits the loop immediately, while continue skips the current iteration. These help handle special conditions and improve control over loop execution.
+    </p>
+
+    <!-- Code Example -->
+    <h2 class="text-xl font-semibold mb-3">Basic Example</h2>
+    <pre class="bg-black p-4 rounded mb-6 text-[#b247ff]">
+using System;
+
+class Program {
+    static void Main() {
+        int i;
+
+        // for loop
+        for(i = 1; i <= 3; i++) {
+            Console.WriteLine("For Loop: " + i);
+        }
+
+        // while loop
+        i = 1;
+        while(i <= 3) {
+            Console.WriteLine("While Loop: " + i);
+            i++;
+        }
+
+        // do-while loop
+        i = 1;
+        do {
+            Console.WriteLine("Do-While Loop: " + i);
+            i++;
+        } while(i <= 3);
+    }
+}
+    </pre>
+
+ 
+
+
+  <!-- JS -->
+   <script  defer src="sr.js"></script>
+  <script>
+  function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    sidebar.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+  }
+
+  // Click outside to close
+  document.getElementById("overlay").addEventListener("click", () => {
+    document.getElementById("sidebar").classList.add("hidden");
+    document.getElementById("overlay").classList.add("hidden");
+  });
+
+  // Press ESC to close
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      document.getElementById("sidebar").classList.add("hidden");
+      document.getElementById("overlay").classList.add("hidden");
+    }
+  });
+</script>
+
+</body>
+</html>

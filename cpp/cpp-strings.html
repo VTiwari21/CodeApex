@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> CodeApex</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0d1117] text-white">
+
+<div class="flex items-center justify-between px-6 py-3 bg-[#0f0f0f] text-white">
+
+  <!-- LEFT -->
+  <div class="flex-1">
+    <button onclick="toggleMenu()" class="mb-3">☰</button>
+
+    <div class="font-mono font-semibold px-4 py-2 rounded-md inline-block cursor-pointer hover:bg-[#8a2be2]" onclick="s()">
+      CodeApex
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-8 text-gray-400">
+    <a href="../learn.html" class="hover:text-white transition">Learn</a>
+    <a href="../comp.html" class="hover:text-white transition">Compiler</a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="flex-1 flex justify-end">
+    <div class="font-mono font-semibold px-4 py-2 rounded-md cursor-pointer hover:bg-[#5a46b8]" onclick="f()">
+      Feedback
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="hidden bg-[#09090b] w-48 h-full fixed top-0 left-0 p-4 z-50">
+  <button onclick="toggleMenu()" class="mb-3">✖ Close</button>
+
+  <h2 class="mb-3 font-semibold">C++ Topics</h2>
+    <ul class="space-y-2">
+    <li><a href="cpp-arrays.html">Arrays</a></li>
+    <li><a href="cpp-loops.html">Loops</a></li>
+    <li><a href="cpp-functions.html">Functions</a></li>
+    <li><a href="cpp-pointers.html">Pointers</a></li>
+    <li><a href="cpp-strings.html">Strings</a></li>
+    <li><a href="cpp-sort.html">Sort</a></li>
+    <li><a href="cpp-search.html">Search</a></li>
+    <li><a href="cpp-oop.html">OOP</a></li>
+    <li><a href="cpp-heap.html">Heap</a></li>
+  </ul>
+</div>
+
+  <!-- Main Content -->
+  <div class="p-6 text-xl">
+
+    <div class="flex justify-center"><h1 class="text-6xl font-bold mb-3 items-center"><span class="text-[#8a2be2]">C++ </span> String</h1></div>
+    <p class="text-[#f5f5f5] mb-6">
+    A string in C++ is a sequence of characters used to store and manipulate text. Unlike C, C++ provides a built-in string class in the <string> library. It makes handling text easier, safer, and more flexible compared to character arrays.
+    </p>
+
+    
+    <h2 class="text-2xl font-semibold mb-3">Declaration and Initialization</h2>
+    <p class="list-disc ml-5 mb-6">
+    Strings in C++ are declared using the string data type. They can be initialized using double quotes. Unlike C-style strings, you do not need to worry about null characters or fixed sizes, as the string class handles memory automatically.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Input and Output of Strings</h2>
+    <p class="list-disc ml-5 mb-6">
+    C++ provides cin and getline() for input, and cout for output. While cin reads input until a space, getline() reads an entire line including spaces. This makes string input more flexible and user-friendly compared to traditional methods.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">String Functions and Operations</h2>
+    <p class="list-disc ml-5 mb-6">
+    The string class supports many built-in functions like length(), append(), substr(), and find(). It also allows operators like + for concatenation. These features simplify string manipulation and reduce the need for manual handling of character arrays.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Advantages of C++ Strings</h2>
+    <p class="list-disc ml-5 mb-6">
+    C++ strings are dynamic, safe, and easy to use. They automatically manage memory and reduce errors like buffer overflow. Compared to C-style strings, they provide more functionality and flexibility, making them ideal for modern programming and text processing tasks.
+    </p>
+
+    <!-- Code Example -->
+    <h2 class="text-xl font-semibold mb-3">Basic Example</h2>
+    <pre class="bg-black p-4 rounded mb-6 text-[#b247ff]">
+#include &lt;siostream&gt;
+#include &lt;string.h&gt;
+
+using namespace std;
+
+int main() {
+    string str = "Hello";
+
+    cout << "String: " << str << endl;
+    cout << "Length: " << str.length() << endl;
+
+    return 0;
+}
+    </pre>
+
+ 
+
+
+  <!-- JS -->
+   <script  defer src="sr.js"></script>
+
+  <script>
+  function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    sidebar.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+  }
+</script>
+
+</body>
+</html>

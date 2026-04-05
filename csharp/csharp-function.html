@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> CodeApex</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0d1117] text-white">
+
+<div class="flex items-center justify-between px-6 py-3 bg-[#0f0f0f] text-white">
+
+  <!-- LEFT -->
+  <div class="flex-1">
+    <button onclick="toggleMenu()" class="mb-3">☰</button>
+
+    <div class="font-mono font-semibold px-4 py-2 rounded-md inline-block cursor-pointer hover:bg-[#8a2be2]" onclick="s()">
+      CodeApex
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-8 text-gray-400">
+    <a href="../learn.html" class="hover:text-white transition">Learn</a>
+    <a href="../comp.html" class="hover:text-white transition">Compiler</a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="flex-1 flex justify-end">
+    <div class="font-mono font-semibold px-4 py-2 rounded-md cursor-pointer hover:bg-[#5a46b8]" onclick="f()">
+      Feedback
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="hidden bg-[#09090b] w-48 h-full fixed top-0 left-0 p-4 z-50">
+  <button onclick="toggleMenu()" class="mb-3">✖ Close</button>
+
+  <h2 class="mb-3 font-semibold">C# Topics</h2>
+  <ul class="space-y-2">
+    <li><a href="csharp-arrays.html">Arrays</a></li>
+    <li><a href="csharp-loops.html">Loops</a></li>
+    <li><a href="csharp-functions.html">Functions</a></li>
+    <li><a href="csharp-strings.html">Strings</a></li>
+    <li><a href="csharp-sort.html">Sort</a></li>
+    <li><a href="csharp-search.html">Search</a></li>
+    <li><a href="csharp-oop.html">OOP</a></li>
+  </ul>
+</div>
+
+  <!-- Main Content -->
+  <div class="p-6 text-xl">
+
+    <div class="flex justify-center"><h1 class="text-6xl font-bold mb-3 items-center"><span class="text-[#8a2be2]">C# </span> Function</h1></div>
+    <p class="text-[#f5f5f5] mb-6">
+    A function in C# (also called a method) is a block of code that performs a specific task. It helps divide a program into smaller parts, improving readability and organization. Functions allow code reuse, making programs more efficient and easier to maintain
+    </p>
+
+    
+    <h2 class="text-2xl font-semibold mb-3">Function Declaration and Initialization</h2>
+    <p class="list-disc ml-5 mb-6">
+    In C#, functions are defined inside a class using a return type, method name, and parameters. There is no separate declaration like in C. The method signature specifies how the function is called, and the body contains the code that executes when invoked.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Types of Functions</h2>
+    <p class="list-disc ml-5 mb-6">
+    C# supports different types of functions such as methods with parameters and return values, methods without parameters, and methods without return values. It also supports advanced features like method overloading, recursion, and static methods for flexible programming.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Parameters and Return Values/h2>
+    <p class="list-disc ml-5 mb-6">
+    Functions can accept parameters to receive input and return values using the return statement. C# also supports passing arguments by value and by reference using ref and out keywords, allowing efficient data handling and modification within methods.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Advantages of Functions</h2>
+    <p class="list-disc ml-5 mb-6">
+    Functions improve code modularity, reusability, and readability. They make debugging easier by isolating logic into smaller parts. Functions also support teamwork, as different developers can work on separate methods, making large projects easier to develop and maintain.
+    </p>
+
+    <!-- Code Example -->
+    <h2 class="text-xl font-semibold mb-3">Basic Example</h2>
+    <pre class="bg-black p-4 rounded mb-6 text-[#b247ff]">
+using System;
+
+class Program {
+
+    // function (method)
+    static int Add(int a, int b) {
+        return a + b;
+    }
+
+    static void Main() {
+        int result = Add(5, 3);
+        Console.WriteLine("Sum = " + result);
+    }
+}
+    </pre>
+
+ 
+
+
+  <!-- JS -->
+   <script  defer src="sr.js"></script>
+  <script>
+  function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    sidebar.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+  }
+
+  // Click outside to close
+  document.getElementById("overlay").addEventListener("click", () => {
+    document.getElementById("sidebar").classList.add("hidden");
+    document.getElementById("overlay").classList.add("hidden");
+  });
+
+  // Press ESC to close
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      document.getElementById("sidebar").classList.add("hidden");
+      document.getElementById("overlay").classList.add("hidden");
+    }
+  });
+</script>
+
+</body>
+</html>

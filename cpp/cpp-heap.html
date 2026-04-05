@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> CodeApex</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0d1117] text-white">
+
+<div class="flex items-center justify-between px-6 py-3 bg-[#0f0f0f] text-white">
+
+  <!-- LEFT -->
+  <div class="flex-1">
+    <button onclick="toggleMenu()" class="mb-3">☰</button>
+
+    <div class="font-mono font-semibold px-4 py-2 rounded-md inline-block cursor-pointer hover:bg-[#8a2be2]" onclick="s()">
+      CodeApex
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-8 text-gray-400">
+    <a href="..\learn.html" class="hover:text-white transition">Learn</a>
+    <a href="..\comp.html" class="hover:text-white transition">Compiler</a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="flex-1 flex justify-end">
+    <div class="font-mono font-semibold px-4 py-2 rounded-md cursor-pointer hover:bg-[#5a46b8]" onclick="f()">
+      Feedback
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="hidden bg-[#09090b] w-48 h-full fixed top-0 left-0 p-4 z-50">
+  <button onclick="toggleMenu()" class="mb-3">✖ Close</button>
+
+  <h2 class="mb-3 font-semibold">C++ Topics</h2>
+    <ul class="space-y-2">
+    <li><a href="cpp-arrays.html">Arrays</a></li>
+    <li><a href="cpp-loops.html">Loops</a></li>
+    <li><a href="cpp-functions.html">Functions</a></li>
+    <li><a href="cpp-pointers.html">Pointers</a></li>
+    <li><a href="cpp-strings.html">Strings</a></li>
+    <li><a href="cpp-sort.html">Sort</a></li>
+    <li><a href="cpp-search.html">Search</a></li>
+    <li><a href="cpp-oop.html">OOP</a></li>
+    <li><a href="cpp-heap.html">Heap</a></li>
+  </ul>
+</div>
+
+  <!-- Main Content -->
+<div class="p-6 text-xl">
+
+    <div class="flex justify-center"><h1 class="text-6xl font-bold mb-3 items-center"><span class="text-[#8a2be2]">C++ </span> Heap</h1></div>
+    <p class="text-[#f5f5f5] mb-6">
+    A heap in C++ is a special tree-based data structure that satisfies the heap property. It is commonly used to implement priority queues where the highest or lowest priority element is always accessible.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-3">Types of Heap</h2>
+    <p class="list-disc ml-5 mb-6">
+    There are two main types: max heap and min heap. In a max heap, the parent node is greater than its children, while in a min heap, the parent node is smaller.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-3">Working of Heap</h2>
+    <p class="list-disc ml-5 mb-6">
+    Heaps are usually implemented using arrays. In C++, the priority_queue from STL is used to manage heaps efficiently. Insertion and deletion maintain the heap property using heapify operations.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-3">Advantages and Limitations</h2>
+    <p class="list-disc ml-5 mb-6">
+    Heaps provide efficient insertion and deletion (O(log n)) and quick access to the top element (O(1)). However, searching for arbitrary elements is slow compared to other data structures.
+    </p>
+
+    <h2 class="text-xl font-semibold mb-3">Basic Example</h2>
+    <pre class="bg-black p-4 rounded mb-6 text-[#b247ff]">
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+using namespace std;
+
+int main() {
+    priority_queue<int> pq;
+
+    pq.push(10);
+    pq.push(30);
+    pq.push(20);
+
+    cout << pq.top(); // highest element
+
+    return 0;
+}
+    </pre>
+</div>
+ 
+
+
+
+
+</body>
+  <!-- JS -->
+   <script  defer src="sr.js"></script>
+
+  <script>
+  function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    sidebar.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+  }
+
+</script>
+</html>

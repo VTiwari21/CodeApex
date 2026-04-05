@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> CodeApex</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0d1117] text-white">
+
+<div class="flex items-center justify-between px-6 py-3 bg-[#0f0f0f] text-white">
+
+  <!-- LEFT -->
+  <div class="flex-1">
+    <button onclick="toggleMenu()" class="mb-3">☰</button>
+
+    <div class="font-mono font-semibold px-4 py-2 rounded-md inline-block cursor-pointer hover:bg-[#8a2be2]" onclick="s()">
+      CodeApex
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-8 text-gray-400">
+    <a href="../learn.html" class="hover:text-white transition">Learn</a>
+    <a href="../comp.html" class="hover:text-white transition">Compiler</a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="flex-1 flex justify-end">
+    <div class="font-mono font-semibold px-4 py-2 rounded-md cursor-pointer hover:bg-[#5a46b8]" onclick="f()">
+      Feedback
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="hidden bg-[#09090b] w-48 h-full fixed top-0 left-0 p-4 z-50">
+  <button onclick="toggleMenu()" class="mb-3">✖ Close</button>
+
+  <h2 class="mb-3 font-semibold">C Topics</h2>
+  <ul class="space-y-2">
+    <li><a href="c-arrays.html">Arrays</a></li>
+    <li><a href="c-loops.html">Loops</a></li>
+    <li><a href="c-functions.html">Functions</a></li>
+    <li><a href="c-pointers.html">Pointers</a></li>
+    <li><a href="c-strings.html">Strings</a></li>
+     <li><a href="c-sort.html">Sort</a></li>
+    <li><a href="c-search.html">Search</a></li>
+  </ul>
+</div>
+
+  <!-- Main Content -->
+  <div class="p-6 text-xl">
+
+    <div class="flex justify-center"><h1 class="text-6xl font-bold mb-3 items-center"><span class="text-[#8a2be2]">C </span> String</h1></div>
+    <p class="text-[#f5f5f5] mb-6">
+    A string in C is a sequence of characters stored in a character array and terminated by a null character \0. Unlike some languages, C does not have a built-in string type. Strings are widely used for handling text, input/output operations, and data processing.
+    </p>
+
+    
+    <h2 class="text-2xl font-semibold mb-3">Declaration and Initialization</h2>
+    <p class="list-disc ml-5 mb-6">
+    Strings are declared as character arrays using char. They can be initialized using double quotes or by assigning characters individually. The null character \0 is automatically added at the end. Proper size allocation is important to store all characters including the terminating null character.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">String Input and Output</h2>
+    <p class="list-disc ml-5 mb-6">
+    C provides functions like scanf() and gets() (deprecated) for input, and printf() for output. For safer input, fgets() is preferred. Strings are printed using %s format specifier. Handling input properly is important to avoid buffer overflow and unexpected behavior.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">String Functions</h2>
+    <p class="list-disc ml-5 mb-6">
+    C provides built-in string handling functions in the &lt;string.h&gt; library. Common functions include strlen() for length, strcpy() for copying, strcat() for concatenation, and strcmp() for comparison. These functions simplify working with strings and reduce manual coding effort.
+    </p>
+    <h2 class="text-2xl font-semibold mb-3">Advantages and Limitations</h2>
+    <p class="list-disc ml-5 mb-6">
+    Strings allow efficient handling of text data in programs. They are flexible and widely used in file handling and user input. However, they require manual memory management and are prone to errors like buffer overflow if not handled carefully, making them less safe than higher-level languages.
+    </p>
+
+    <!-- Code Example -->
+    <h2 class="text-xl font-semibold mb-3">Basic Example</h2>
+    <pre class="bg-black p-4 rounded mb-6 text-[#b247ff]">
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char str[20] = "Hello";
+
+    printf("String: %s\n", str);
+    printf("Length: %lu\n", strlen(str));
+
+    return 0;
+}
+    </pre>
+
+ 
+
+
+  <!-- JS -->
+   <script  defer src="sr.js"></script>
+
+  <script>
+  function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    sidebar.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+  }
+
+</script>
+
+</body>
+</html>

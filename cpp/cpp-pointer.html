@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> CodeApex</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#0d1117] text-white">
+
+<div class="flex items-center justify-between px-6 py-3 bg-[#0f0f0f] text-white">
+
+  <!-- LEFT -->
+  <div class="flex-1">
+    <button onclick="toggleMenu()" class="mb-3">☰</button>
+
+    <div class="font-mono font-semibold px-4 py-2 rounded-md inline-block cursor-pointer hover:bg-[#8a2be2]" onclick="s()">
+      CodeApex
+    </div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-8 text-gray-400">
+    <a href="..\learn.html" class="hover:text-white transition">Learn</a>
+    <a href="..\comp.html" class="hover:text-white transition">Compiler</a>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="flex-1 flex justify-end">
+    <div class="font-mono font-semibold px-4 py-2 rounded-md cursor-pointer hover:bg-[#5a46b8]" onclick="f()">
+      Feedback
+    </div>
+  </div>
+
+</div>
+</div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="hidden bg-[#09090b] w-48 h-full fixed top-0 left-0 p-4 z-50">
+  <button onclick="toggleMenu()" class="mb-3">✖ Close</button>
+
+  <h2 class="mb-3 font-semibold">C++ Topics</h2>
+    <ul class="space-y-2">
+    <li><a href="cpp-arrays.html">Arrays</a></li>
+    <li><a href="cpp-loops.html">Loops</a></li>
+    <li><a href="cpp-functions.html">Functions</a></li>
+    <li><a href="cpp-pointers.html">Pointers</a></li>
+    <li><a href="cpp-strings.html">Strings</a></li>
+    <li><a href="cpp-sort.html">Sort</a></li>
+    <li><a href="cpp-search.html">Search</a></li>
+    <li><a href="cpp-oop.html">OOP</a></li>
+    <li><a href="cpp-heap.html">Heap</a></li>
+  </ul>
+</div>
+
+  <!-- Main Content -->
+<div class="p-6 text-xl">
+
+    <div class="flex justify-center"><h1 class="text-6xl font-bold mb-3 items-center"><span class="text-[#8a2be2]">C++ </span> Pointer</h1></div>
+    <p class="text-[#f5f5f5] mb-6">
+    A pointer in C++ is a variable that stores the memory address of another variable. It allows direct access to memory and is widely used for dynamic memory allocation, efficient array handling, and implementing complex data structures.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-3">Declaration and Initialization</h2>
+    <p class="list-disc ml-5 mb-6">
+    Pointers are declared using the asterisk (*) symbol. They are initialized by assigning the address of a variable using the address-of (&) operator. Proper initialization is important to avoid undefined behavior caused by wild pointers.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-3">Accessing and Modifying Elements</h2>
+    <p class="list-disc ml-5 mb-6">
+    The value stored at the memory address can be accessed using the dereference (*) operator. You can modify the original variable through the pointer, making pointers powerful for passing arguments and working with memory directly.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-3">Types of Pointers</h2>
+    <p class="list-disc ml-5 mb-6">
+    C++ supports different types of pointers such as null pointers, void pointers, and pointer to pointer. Smart pointers like unique_ptr and shared_ptr are also available in modern C++ for safer memory management.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-3">Advantages and Limitations</h2>
+    <p class="list-disc ml-5 mb-6">
+    Pointers provide powerful control over memory and improve performance. However, improper use can lead to memory leaks, dangling pointers, and crashes, making them harder to use compared to high-level constructs.
+    </p>
+
+    <h2 class="text-xl font-semibold mb-3">Basic Example</h2>
+    <pre class="bg-black p-4 rounded mb-6 text-[#b247ff]">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int x = 10;
+    int* ptr = &x;
+
+    cout << "Value of x: " << x << endl;
+    cout << "Address of x: " << ptr << endl;
+    cout << "Value using pointer: " << *ptr << endl;
+
+    return 0;
+}
+    </pre>
+</div>
+ 
+
+
+
+
+</body>
+  <!-- JS -->
+   <script  defer src="sr.js"></script>
+  <script>
+  function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    sidebar.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+  }
+</script>
+</html>
