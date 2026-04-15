@@ -394,18 +394,7 @@
  window.open('index.html','_blank');
   }
 
-  function toggleSplit() {
-  splitOpen = !splitOpen;
 
-  const refPane = document.getElementById("refPane");
-
-  if (splitOpen) {
-    // open ChatGPT in new tab instead
-    window.open("https://chatgpt.com/", "_blank");
-  } else {
-    refPane.classList.remove("visible");
-  }
-}
 
   async function runCode() {
     const code       = document.getElementById("code").value;
