@@ -258,7 +258,7 @@
     width: 100%;
     font-family: 'JetBrains Mono', monospace;
     font-size: 14px;
-    line-height: 1.6;
+    line-height: 1.4;
     border: 1px solid #30363d;
     border-radius: 8px;
 }
@@ -269,8 +269,8 @@
 }
 
 /* Editor cursor */
+/* Normal, thin typing cursor */
 .CodeMirror-cursor {
-    border-left: 2px solid #ffffff;
+    border-left: 1px solid #c9d1d9 !important;
 }
-      
 
