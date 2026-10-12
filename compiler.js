@@ -57,7 +57,7 @@ const JUDGE0_URL =
     "https://ce.judge0.com/submissions/?base64_encoded=false&wait=true";
 
 async function runCode() {
-    source_code: codeEditor.getValue(),
+    const code = codeEditor.getValue();
     const languageId = Number(document.getElementById("language").value);
     const stdin = document.getElementById("stdin").value;
 
