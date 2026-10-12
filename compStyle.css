@@ -250,3 +250,27 @@
     ::-webkit-scrollbar-thumb:hover { background: #30363d; }
 
     @keyframes spin { to { transform: rotate(360deg); } }
+   
+    /*-----------NEW SHIT-----------------*/
+    /* CodeMirror editor */
+.CodeMirror {
+    height: 420px;
+    width: 100%;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+}
+
+/* Editor selection */
+.CodeMirror-selected {
+    background: #264f78 !important;
+}
+
+/* Editor cursor */
+.CodeMirror-cursor {
+    border-left: 2px solid #ffffff;
+}
+      
+
