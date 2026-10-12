@@ -6,12 +6,58 @@ function ref(){
 }
 
 //--------------NEW THINGS------------------------------------------------------------
- 
+ // Initialize CodeMirror editor
+const codeEditor = CodeMirror.fromTextArea(
+    document.getElementById("code"),
+    {
+        mode: "text/x-csrc",
+        theme: "material-darker",
+        lineNumbers: true,
+        indentUnit: 4,
+        tabSize: 4,
+        indentWithTabs: false,
+        matchBrackets: true,
+        autoCloseBrackets: true,
+        lineWrapping: false,
+
+        // Run code using Ctrl + Enter or Cmd + Enter
+        extraKeys: {
+            "Ctrl-Enter": function () {
+                runCode();
+            },
+            "Cmd-Enter": function () {
+                runCode();
+            }
+        }
+    }
+);
+
+const languageSelect = document.getElementById("language");
+
+function updateEditorMode() {
+    const modes = {
+        "50": "text/x-csrc",       // C
+        "54": "text/x-c++src",     // C++
+        "62": "text/x-java",       // Java
+        "71": "python",            // Python
+        "51": "text/x-csharp"      // C#
+    };
+
+    codeEditor.setOption(
+        "mode",
+        modes[languageSelect.value] || "text/plain"
+    );
+}
+
+languageSelect.addEventListener("change", updateEditorMode);
+updateEditorMode();
+
+
 const JUDGE0_URL =
     "https://ce.judge0.com/submissions/?base64_encoded=false&wait=true";
 
 async function runCode() {
-    const code = document.getElementById("code").value;
+    source_code: codeEditor.getValue(),
     const languageId = Number(document.getElementById("language").value);
     const stdin = document.getElementById("stdin").value;
 
