@@ -1,9 +1,86 @@
  function tab(){
  window.open('index.html','_blank');
   }
-function ref(){
-  window.open('https://chatgpt.com', '_blank');
+function ref() {
+    const container = document.querySelector(".split-container");
+    const button = document.getElementById("toggleBtn");
+
+    container.classList.toggle("reference-open");
+
+    const isOpen = container.classList.contains("reference-open");
+
+    button.setAttribute("aria-expanded", String(isOpen));
+
+    if (!isOpen) {
+        document.querySelector(".compiler-pane").style.flexBasis = "";
+    }
 }
+// ===== Resizable compiler/reference divider =====
+const splitContainer = document.querySelector(".split-container");
+const divider = document.getElementById("divider");
+const compilerPane = document.querySelector(".compiler-pane");
+
+let isDragging = false;
+
+divider.addEventListener("pointerdown", function (event) {
+    if (!splitContainer.classList.contains("reference-open")) return;
+
+    isDragging = true;
+    divider.classList.add("dragging");
+    divider.setPointerCapture(event.pointerId);
+
+    event.preventDefault();
+});
+
+divider.addEventListener("pointermove", function (event) {
+    if (!isDragging) return;
+
+    const rect = splitContainer.getBoundingClientRect();
+    const dividerWidth = divider.getBoundingClientRect().width;
+
+    // Keep both panels usable
+    const minWidth = Math.min(280, rect.width * 0.25);
+    const availableWidth = rect.width - dividerWidth;
+
+    const desiredWidth = event.clientX - rect.left;
+    const clampedWidth = Math.max(
+        minWidth,
+        Math.min(desiredWidth, availableWidth - minWidth)
+    );
+
+    compilerPane.style.flex = "0 0 auto";
+    compilerPane.style.width =
+        `${(clampedWidth / rect.width) * 100}%`;
+});
+
+function stopDragging() {
+    isDragging = false;
+    divider.classList.remove("dragging");
+}
+
+divider.addEventListener("pointerup", stopDragging);
+divider.addEventListener("pointercancel", stopDragging);
+
+// Keyboard accessibility: arrow keys resize the panes
+divider.addEventListener("keydown", function (event) {
+    if (!splitContainer.classList.contains("reference-open")) return;
+
+    const rect = splitContainer.getBoundingClientRect();
+    const currentWidth = compilerPane.getBoundingClientRect().width;
+    const step = 20;
+
+    if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        compilerPane.style.flex = "0 0 auto";
+        compilerPane.style.width =
+            `${Math.max(280, currentWidth - step)}px`;
+    } else if (event.key === "ArrowRight") {
+        event.preventDefault();
+        compilerPane.style.flex = "0 0 auto";
+        compilerPane.style.width =
+            `${Math.min(rect.width - 300, currentWidth + step)}px`;
+    }
+});
 
 //--------------NEW THINGS------------------------------------------------------------
  // Initialize CodeMirror editor
