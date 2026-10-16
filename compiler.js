@@ -11,7 +11,6 @@ const codeEditor = CodeMirror.fromTextArea(
     document.getElementById("code"),
     {
         mode: "text/x-csrc",
-        theme: "default",
         lineNumbers: true,
         indentUnit: 4,
         tabSize: 4,
