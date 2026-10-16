@@ -273,4 +273,41 @@
 .CodeMirror-cursor {
     border-left: 1px solid #c9d1d9 !important;
 }
+/* CodeMirror dark editor theme */
+.CodeMirror {
+    background: #0d1117 !important;
+    color: #c9d1d9 !important;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    line-height: 1.4 !important;
+    height: 420px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+}
+
+/* Line number gutter */
+.CodeMirror-gutters {
+    background: #0d1117 !important;
+    border-right: 1px solid #30363d !important;
+}
+
+.CodeMirror-linenumber {
+    color: #6e7681 !important;
+}
+
+/* Text selection */
+.CodeMirror-selected {
+    background: #264f78 !important;
+}
+
+/* Normal typing cursor */
+.CodeMirror-cursor {
+    border-left: 1px solid #c9d1d9 !important;
+}
+
+/* Keep the editor text area dark */
+.CodeMirror-scroll,
+.CodeMirror-sizer {
+    background: #0d1117 !important;
+}
 
