@@ -302,7 +302,7 @@
 
 /* Normal typing cursor */
 .CodeMirror-cursor {
-    border-left: 1px solid #c9d1d9 !important;
+    border-left: 1.5px solid #c9d1d9 !important;
 }
 
 /* Keep the editor text area dark */
