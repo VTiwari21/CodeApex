@@ -254,64 +254,12 @@
     /*-----------NEW SHIT-----------------*/
     /* CodeMirror editor */
 
-/* CodeMirror dark theme */
+/* CodeMirror: fix excessive vertical line spacing */
 .CodeMirror {
     height: 420px;
-    width: 100%;
-    background: #0d1117 !important;
-    color: #c9d1d9 !important;
-
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
-    line-height: 1.4 !important;
-
-    border: 1px solid #30363d;
-    border-radius: 8px;
-}
-
-/* Line number gutter */
-.CodeMirror-gutters {
-    background: #0d1117 !important;
-    border-right: 1px solid #30363d !important;
-}
-
-.CodeMirror-linenumber {
-    color: #6e7681 !important;
-    padding: 0 5px 0 3px;
-}
-
-/* Editor text area */
-.CodeMirror-scroll,
-.CodeMirror-sizer,
-.CodeMirror-lines {
-    background: #0d1117 !important;
-}
-
-.CodeMirror-lines {
-    padding: 4px 0;
-}
-
-.CodeMirror pre.CodeMirror-line,
-.CodeMirror pre.CodeMirror-line-like {
-    line-height: 1.4 !important;
-    padding: 0 4px;
-}
-
-/* Text selection */
-.CodeMirror-selected {
-    background: #264f78 !important;
-}
-
-/* Thin typing cursor */
-.CodeMirror-cursor {
-    border-left: 1px solid #c9d1d9 !important;
-}
-
-/* Fix CodeMirror line spacing and alignment */
-.CodeMirror {
     font-family: 'JetBrains Mono', monospace !important;
     font-size: 14px !important;
-    line-height: normal !important;
+    line-height: 20px !important;
     background: #0d1117 !important;
     color: #c9d1d9 !important;
 }
@@ -321,10 +269,16 @@
     font-family: 'JetBrains Mono', monospace !important;
     font-size: 14px !important;
     line-height: 20px !important;
+    height: auto !important;
 }
 
 .CodeMirror-lines {
-    padding: 4px 0 !important;
+    padding: 0 !important;
+}
+
+.CodeMirror-line,
+.CodeMirror-linenumber {
+    min-height: 20px !important;
 }
 
 .CodeMirror-gutters {
@@ -332,12 +286,6 @@
     border-right: 1px solid #30363d !important;
 }
 
-.CodeMirror-linenumber {
-    padding: 0 5px 0 3px !important;
-    color: #6e7681 !important;
-}
-
 .CodeMirror-cursor {
     border-left: 1px solid #c9d1d9 !important;
 }
-
