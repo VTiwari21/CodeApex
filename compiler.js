@@ -63,6 +63,9 @@ async function runCode() {
     const output = document.getElementById("output");
     const dot = document.getElementById("outputDot");
     const btn = document.getElementById("runBtn");
+    const statusElement = document.getElementById("executionStatus");
+    const timeElement = document.getElementById("executionTime");
+    const memoryElement = document.getElementById("executionMemory");
 
     // 1. Validate input
     if (!code.trim()) {
@@ -77,7 +80,10 @@ async function runCode() {
     output.className = "";
     dot.className = "output-dot";
     btn.disabled = true;
-
+    statusElement.textContent = "Running...";
+   statusElement.className = "status-value running";
+   timeElement.textContent = "—";
+   memoryElement.textContent = "—";
     btn.innerHTML = `
         <svg width="13" height="13" viewBox="0 0 13 13"
              style="animation: spin 1s linear infinite">
@@ -114,7 +120,16 @@ async function runCode() {
         // 5. Check the actual execution status
         const statusId = result.status?.id;
         const statusText = result.status?.description || "Unknown status";
+        // Display Judge0 execution metrics when available
+        statusElement.textContent = statusText;
+        statusElement.className =
+         statusId === 3 ? "status-value success" : "status-value error";
 
+        timeElement.textContent =
+          result.time != null ? `${result.time} s` : "—";
+
+        memoryElement.textContent =
+          result.memory != null ? `${result.memory} KB` : "—";
         let message = "";
         let isError = false;
 
@@ -152,6 +167,10 @@ async function runCode() {
         output.textContent = `Error: ${error.message}`;
         output.className = "error";
         dot.className = "output-dot error";
+        statusElement.textContent = "Request Failed";
+        statusElement.className = "status-value error";
+        timeElement.textContent = "—";
+        memoryElement.textContent = "—";
 
     } finally {
         // 8. Always restore the Run button
