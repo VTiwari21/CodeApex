@@ -99,7 +99,58 @@
   </div>
 
   <!-- Divider -->
-  <div class="divider" id="divider"></div>
+    <!-- Draggable Divider -->
+  <div
+    class="divider"
+    id="divider"
+    role="separator"
+    aria-orientation="vertical"
+    aria-label="Resize compiler and reference panels"
+    tabindex="0"
+  ></div>
+
+  <!-- Right: Reference Panel -->
+  <div class="reference-pane" id="referencePane">
+    <div class="reference-header">
+      <div>
+        <div class="reference-title">Reference</div>
+        <div class="reference-subtitle">
+          Quick coding resources
+        </div>
+      </div>
+
+      <button
+        class="close-reference"
+        onclick="ref()"
+        aria-label="Close reference panel"
+      >×</button>
+    </div>
+
+    <div class="reference-content">
+      <h3>Documentation</h3>
+
+      <a href="https://en.cppreference.com/w/" target="_blank" rel="noopener noreferrer">
+        C / C++ Reference ↗
+      </a>
+
+      <a href="https://docs.python.org/3/" target="_blank" rel="noopener noreferrer">
+        Python Documentation ↗
+      </a>
+
+      <a href="https://docs.oracle.com/en/java/" target="_blank" rel="noopener noreferrer">
+        Java Documentation ↗
+      </a>
+
+      <a href="https://learn.microsoft.com/en-us/dotnet/csharp/" target="_blank" rel="noopener noreferrer">
+        C# Documentation ↗
+      </a>
+
+      <h3>Quick Tips</h3>
+      <p><kbd>Ctrl</kbd> + <kbd>Enter</kbd> — Run code</p>
+      <p>Use the language selector to change syntax highlighting.</p>
+      <p>Enter program input in the stdin field before running.</p>
+    </div>
+  </div>
 
 </div>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js" defer></script>
