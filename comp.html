@@ -71,13 +71,31 @@
     </button>
 
     <div class="output-wrap">
-      <div class="output-header">
-        <div class="output-dot" id="outputDot"></div>
-        <span class="output-title">Output</span>
-      </div>
-      <pre id="output">Output will appear here...</pre>
+  <div class="output-header">
+    <div class="output-dot" id="outputDot"></div>
+    <span class="output-title">Output</span>
+  </div>
+
+  <!-- Execution information -->
+  <div class="execution-info">
+    <div class="execution-item">
+      <span class="execution-label">STATUS</span>
+      <span id="executionStatus" class="status-value">Ready</span>
     </div>
 
+    <div class="execution-item">
+      <span class="execution-label">TIME</span>
+      <span id="executionTime" class="execution-value">—</span>
+    </div>
+
+    <div class="execution-item">
+      <span class="execution-label">MEMORY</span>
+      <span id="executionMemory" class="execution-value">—</span>
+    </div>
+  </div>
+
+  <pre id="output">Output will appear here...</pre>
+</div>
   </div>
 
   <!-- Divider -->
