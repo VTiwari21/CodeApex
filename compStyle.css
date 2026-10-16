@@ -307,3 +307,37 @@
     border-left: 1px solid #c9d1d9 !important;
 }
 
+/* Fix CodeMirror line spacing and alignment */
+.CodeMirror {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 14px !important;
+    line-height: normal !important;
+    background: #0d1117 !important;
+    color: #c9d1d9 !important;
+}
+
+.CodeMirror pre,
+.CodeMirror-linenumber {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+}
+
+.CodeMirror-lines {
+    padding: 4px 0 !important;
+}
+
+.CodeMirror-gutters {
+    background: #0d1117 !important;
+    border-right: 1px solid #30363d !important;
+}
+
+.CodeMirror-linenumber {
+    padding: 0 5px 0 3px !important;
+    color: #6e7681 !important;
+}
+
+.CodeMirror-cursor {
+    border-left: 1px solid #c9d1d9 !important;
+}
+
