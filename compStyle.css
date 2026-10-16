@@ -339,3 +339,152 @@
     border: 1px solid #30363d;
     border-radius: 0 0 8px 8px;
 }
+/* ===== Split layout ===== */
+
+.split-container {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.compiler-pane {
+    flex: 1 1 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Hide the divider and reference panel until opened */
+.divider,
+.reference-pane {
+    display: none;
+}
+
+/* When Reference is open, show both panes */
+.split-container.reference-open .compiler-pane {
+    flex: 0 1 70%;
+}
+
+.split-container.reference-open .divider {
+    display: block;
+    flex: 0 0 6px;
+    background: #30363d;
+    cursor: col-resize;
+    touch-action: none;
+    transition: background 0.15s ease;
+}
+
+.split-container.reference-open .divider:hover,
+.split-container.reference-open .divider.dragging {
+    background: #8957e5;
+}
+
+.split-container.reference-open .reference-pane {
+    display: flex;
+    flex: 1 1 30%;
+    flex-direction: column;
+    min-width: 0;
+    box-sizing: border-box;
+    margin: 0 16px 24px 0;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    background: #0d1117;
+    color: #c9d1d9;
+    overflow: auto;
+}
+
+/* Reference panel header */
+.reference-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px;
+    border-bottom: 1px solid #30363d;
+}
+
+.reference-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.reference-subtitle {
+    margin-top: 5px;
+    color: #8b949e;
+    font-size: 12px;
+}
+
+.close-reference {
+    background: transparent;
+    color: #8b949e;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 2px 9px;
+}
+
+.close-reference:hover {
+    color: #ffffff;
+    background: #21262d;
+}
+
+.reference-content {
+    padding: 16px;
+    overflow-wrap: anywhere;
+}
+
+.reference-content h3 {
+    margin: 8px 0 14px;
+    color: #8b949e;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.reference-content a {
+    display: block;
+    margin-bottom: 14px;
+    color: #a78bfa;
+    text-decoration: none;
+}
+
+.reference-content a:hover {
+    text-decoration: underline;
+}
+
+.reference-content p {
+    color: #c9d1d9;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.reference-content kbd {
+    padding: 2px 5px;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    background: #161b22;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Smaller screens: stack panels instead of squeezing them */
+@media (max-width: 760px) {
+    .split-container.reference-open {
+        flex-wrap: wrap;
+    }
+
+    .split-container.reference-open .compiler-pane {
+        flex: 1 1 100%;
+    }
+
+    .split-container.reference-open .divider {
+        display: none;
+    }
+
+    .split-container.reference-open .reference-pane {
+        flex: 1 1 100%;
+        margin: 16px;
+    }
+}
