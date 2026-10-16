@@ -253,34 +253,18 @@
    
     /*-----------NEW SHIT-----------------*/
     /* CodeMirror editor */
+
+/* CodeMirror dark theme */
 .CodeMirror {
     height: 420px;
     width: 100%;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
-    line-height: 1.4;
-    border: 1px solid #30363d;
-    border-radius: 8px;
-}
-
-/* Editor selection */
-.CodeMirror-selected {
-    background: #264f78 !important;
-}
-
-/* Editor cursor */
-/* Normal, thin typing cursor */
-.CodeMirror-cursor {
-    border-left: 1px solid #c9d1d9 !important;
-}
-/* CodeMirror dark editor theme */
-.CodeMirror {
     background: #0d1117 !important;
     color: #c9d1d9 !important;
+
     font-family: 'JetBrains Mono', monospace;
-    font-size: 15px;
-    line-height: 1.5px !important;
-    height: 420px;
+    font-size: 14px;
+    line-height: 1.4 !important;
+
     border: 1px solid #30363d;
     border-radius: 8px;
 }
@@ -293,6 +277,24 @@
 
 .CodeMirror-linenumber {
     color: #6e7681 !important;
+    padding: 0 5px 0 3px;
+}
+
+/* Editor text area */
+.CodeMirror-scroll,
+.CodeMirror-sizer,
+.CodeMirror-lines {
+    background: #0d1117 !important;
+}
+
+.CodeMirror-lines {
+    padding: 4px 0;
+}
+
+.CodeMirror pre.CodeMirror-line,
+.CodeMirror pre.CodeMirror-line-like {
+    line-height: 1.4 !important;
+    padding: 0 4px;
 }
 
 /* Text selection */
@@ -300,14 +302,8 @@
     background: #264f78 !important;
 }
 
-/* Normal typing cursor */
+/* Thin typing cursor */
 .CodeMirror-cursor {
-    border-left: 1.5px solid #c9d1d9 !important;
-}
-
-/* Keep the editor text area dark */
-.CodeMirror-scroll,
-.CodeMirror-sizer {
-    background: #0d1117 !important;
+    border-left: 1px solid #c9d1d9 !important;
 }
 
